@@ -6,5 +6,9 @@ Manytimes while installing apps like Photoshop , Lightroom or big apps they come
 
 Issue : Sometimes if the guest account creates db then problem might occur.
 
+Language : JAVA
+
+Works with OSX El-Capitan
+
 
 
