@@ -65,10 +65,27 @@ public class LaunchPadIconRemover extends JFrame  {
 				//Root
 				ProcessBuilder admin=new ProcessBuilder("sh","res/admin.sh");
 				Process sudo;
+				String path = null;
 				
 				try {
 					sudo=admin.start();
 					sudo.waitFor();
+					
+
+					InputStream s = sudo.getInputStream();
+					
+					BufferedReader in = new BufferedReader(new InputStreamReader(s));
+					
+					String temp;
+					
+					
+
+	        		while ((temp = in.readLine()) != null) {
+	        			
+	        		    path=temp;
+	        		    System.out.println(path);  
+	        		}
+	        		
 				} catch (IOException e2) {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
@@ -81,7 +98,7 @@ public class LaunchPadIconRemover extends JFrame  {
 			
 				
 				String app=textInput.getText();
-				ProcessBuilder pm=new ProcessBuilder("sh","res/AppIcon.sh",app);
+				ProcessBuilder pm=new ProcessBuilder("sh","res/AppIcon.sh",path,app);
         		Process o;
 				try {
 					
